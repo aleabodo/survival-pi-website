@@ -1,0 +1,295 @@
+<html> 
+	<head>
+		<title>survival-pi.com</title>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<script>
+			var url = "https://api.minetools.eu/ping/survival-pi.com/25565";
+			$.getJSON(url, function(r) {
+				if(r.error){
+			    	$('#rest').html('<span style="color: red;">Server Offline.</span> | The server is probably restarting or under maintenance. Check the discord for more information!');
+			  		return false;
+				}  
+				$('#rest').html('<span style="color: green;">Online.</span> | Players online: ' + r.players.online + '/' + r.players.max + ' | Version: ' + r.version.name);    
+			});
+		</script>
+
+		<style>
+			html {
+				color: rgb(40,40,40);
+				font: sans-serif;
+				font-size: 1.1em;
+				background-color: rgb(240,240,240);
+				padding-top: 1%;
+				padding-bottom: 1%;
+			}
+			
+			code {
+				font-size: 1.1em;
+			}		
+	
+			.wrapper {
+				background-color: white;
+				margin-bottom: 5%;
+				margin-right: 5%;
+				margin-left: 5%;
+				border-radius: 15px;
+				box-shadow: 0px 0px 10px rgb(200,200,200);
+			}	
+
+			.inner-wrapper {
+				padding: 3%;
+				padding-right: 5%;
+				padding-left: 5%;
+			}
+
+			img {
+				border-radius: 15px 15px 0 0;
+			}
+
+			h2, h1 {
+				color: #c15705;
+			}	
+
+			.status {
+				font-weight: bold;
+				margin: 20px;
+				margin-left: 5%;
+				margin-right: 5%;
+				text-align: center;
+				color: #c15705;
+			}
+
+			.status-online {
+				color: green;
+			}
+
+			.status-offline {
+				color: red;
+			}
+
+			@media only screen and (min-width: 800px) and (orientation: landscape) {
+				.wrapper {
+					margin-left: 25%;
+					margin-right: 25%;
+					margin-bottom: 2%;
+				}
+				
+				.status {
+					margin-left: 25%;
+					margin-right: 25%;
+				}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="status" id="rest">...Loading...</div>
+	
+
+
+		<div class="wrapper">
+			<img src="./img/survival-pi-banner.jpg" style="width:100%;" />
+			<div class="inner-wrapper">
+				<h1>Survival-Pi | Minecraft Whitelisted SMP</h1>
+				Minecraft (Java) survival server with a shop and economy system for trading ressources with friends.
+				<ul>
+					<li>Want to <b>be added to the Whitelist</b>? Apply <a href="https://discord.gg/DWUHb5tSc3">on the Discord</a>
+					<li>Address: <b>survival-pi.com</b></li>
+					<li><b>Discord: </b><a href="https://discord.gg/DWUHb5tSc3">https://discord.gg/DWUHb5tSc3</a></li>	
+					<li><a href="https://www.planetminecraft.com/server/survival-pi-smp/">PMC</a>
+					<li>Hosted in Germany &#127465;&#127466;</li>
+					<li>Since September 2020!</li>
+				</ul>
+
+				<h2>Features:</h2>
+				<ul>
+					<li>Ingame proximity <b>voice chat</b> like on Hermitcraft.</li>
+					<li><b>Economy</b> & Shop system at spawn for making trading ressources easier.</li>
+					<li>A unique <b>spectator</b> mode (<code>/s</code>) that doesn't let you fly through blocks. Makes viewing your builds much easier!</li>
+					<li>A <b>creative</b> world with a seperate inventory for testing your redstone and build designs.</li>
+					<li><b>Chest protection</b> and <b>grief detection</b> (<code>/co i</code>).</li>
+					<li><b>World download</b> possible!</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="wrapper">
+            <div class="inner-wrapper">
+				<h1 id="modpack">Worldmap:</h1>
+				Explore the world map in 3D in your browser. Want your own marker to be added to you base location? Let an admin know!
+				<br /><br /><a href="https://survival-pi.com/map/?world=minecraft_overworld&zoom=5&x=139&z=-138">Click to open the map</a>
+			</div>
+		</div>
+
+
+
+		<div class="wrapper">
+            <div class="inner-wrapper">
+				<h1 id="modpack">Survival-Pi Modpack:</h1>
+				Read below for a tutorial on how to install the mods with the Fabric mod loader on Windows. The mods improve your fps and allow you to install shaderpacks. The proximity voice chat we use is also included. Check below for a full list on all mods that are included.
+				<ol>
+					<li>Download the <a href="https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.11.0/fabric-installer-0.11.0.exe" target="_blank">Fabric mod loader</a>.</li>
+                    <li>Download the <a href="https://www.mediafire.com/file/7sxzvd3mk1w614l/extract-me-into-mod-folder.zip/file" target="_blank">modpack zip file</a>.</li>
+					<li>Launch Minecraft on the server's version and close it right after. You need to use the default Minecraft launcher (no Badlion etc.)!</li>
+					<li>Double-click the Fabric mod loader jar from step 1. An installer window will open. If it doesn't you might need to install Java. Search the internet on how to do that.</li>
+					<li>In the installer window select the correct version to match the version of the server. Then hit <i>install</i>.</li>
+					<li>Launch Minecraft with the new launch option that's now available in the Minecraft launcher and quit it right after.</li>
+					<li>Now we need to install the mods from the modpack: Rightclick the downloaded zip file from step 2 and click the <i>Extract All</i> option for unzipping it.</li>
+					<li>Press <i>WINDOWS</i> + <i>r</i> on your keyboard and type <code>%appdata%</code> into the popup text field. Then press <i>ENTER</i>.</li>
+					<li>Navigate to <code>.minecraft/mods/</code>.</li>
+					<li>Move the (<code>.jar</code>) files that are in the extracted zip file into the Minecraft mod folder.</li>
+					<li>Finished! Now launch Minecraft with the new launch option.</li>
+				</ol>
+				Read the <a href="https://survival-pi.com/#vc">voice chat section</a> below for more information on how to use the proximity voice chat mod.
+				
+				<h2>Mods that are included in the modpack:</h2>
+				<ul>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat" target="_blank">Simple Voice Chat</a>: Proximity voice chat.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/sound-physics-remastered" target="_blank">Sound Physics Remastered</a>: Making sounds and voice chat sound more realistic.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/farsight-fabric/files" target="_blank">Farsight</a>: Virtually increasing view distance. You're now able to use view-distances higher than the server's view distance cap.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/shulkerboxtooltip" target="_blank">ShulkerBoxToolTip</a>: When holding <i>SHIFT</i> and hovering a shulker box in your inventory you can see its contents.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/modmenu" target="_blank">Mod Menu</a></li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/sodium" target="_blank">Sodium</a>, <a href="https://www.curseforge.com/minecraft/mc-mods/sodium-extra" target="_blank">Sodium Extras</a>, <a href="https://www.curseforge.com/minecraft/mc-mods/enhanced-block-entities" target="_blank">Enhanced Block Entities</a>, <a href="https://www.curseforge.com/minecraft/mc-mods/fastchest" target="_blank">FastChest</a>, <a href="https://www.curseforge.com/minecraft/mc-mods/lazydfu" target="_blank">LazyDFU</a>, <a href="https://www.curseforge.com/minecraft/mc-mods/entityculling" target="_blank">Entity Culling</a> and <a href="https://www.curseforge.com/minecraft/mc-mods/phosphor" target="_blank">Phosphor</a>: Improving your FPS.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/reeses-sodium-options" target="_blank">Reese's Sodium Options</a>: Replaces Sodium's Options Screen with the intention of improving UX</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/lightlevel" target="_blank">LightLevel</a>: Display the light level on every block by pressing <code>f9</code>.</li>
+					<li><a href="https://irisshaders.net/" target="_blank">Iris</a>: For using shaders. You can install shaders by putting them into the <code>shaderpacks</code> folder just like you're used to with Optifine.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/continuity" target="_blank">Continuity</a>: Support for connected textures.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/lazydfu" target="_blank">LazyDFU</a>: Launching the game way quicker.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/auto-clicker-fabric">Auto Clicker</a>: Autoclicker right- or left-click. You might need to go into your keybinding settings to set a keybinding for activating the clicker and opening its settings.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/indium" target="_blank">Indium</a>: Dependency used some of the included mods (including Continuity).</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank">Fabric API</a>: Dependency used my some of the included mods.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/screenshot-to-clipboard-fabric" target="_blank">Screenshot to clipboard</a>: Automatically copies the screenshot you take (with f2) to your clipboard, so you can paste it in Discord or anywhere else with CTRL-V.</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/lithium" target="_blank">Lithium</a>: General purpose optimizations</li>
+					<li><a href="https://www.curseforge.com/minecraft/mc-mods/entity-texture-features-fabric" target="_blank">Entity Texture Features</a>: Enabling random, emissive & blinking textures for Mobs, Skins and much more. Use together with ressource packs that support those features.</li>
+				</ul>
+
+				<h2>Recommended shader pack:</h2>
+				<a href="https://www.curseforge.com/minecraft/customization/complementary-shaders/download/3856409/file" target="_blank">Complementary Shaders</a>. Move the downloaded zip file into the shaderpacks folder under <code>[...].minecraft/shaderpacks/</code>.
+			</div>
+		</div>
+
+
+		
+		<div class="wrapper">
+			<div class="inner-wrapper">
+				<h1>Tutorials and features:</h1>
+
+				<p>
+					<a href="https://survival-pi.com/#vc">Use in-game proximity voice chat</a>
+					<br /><a href="https://survival-pi.com/#get-money">How to get money </a>
+					<br /><a href="https://survival-pi.com#sell-and-buy-at-shops">How to sell and buy at shops</a>
+					<br /><a href="https://survival-pi.com/#create-your-own-shop">How to create your own shop</a>
+					<br /><a href="https://survival-pi.com/#protect-your-chests">How to protect your chests</a>
+					<br /><a href="https://survival-pi.com/#useful-commands">Some useful commands and things you can do</a>
+				</p>
+
+				<h2 id="vc">Use in-game proximity voice chat:</h2>
+				<p>
+					We use the same <a href="https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat">in-game proximity voice chat</a> that the Hermitcraft SMP uses. You need to install this mod with the <b>correct version</b> in order to use the voice chat with others. If you don't know how to install mods or which version to use, refer to <a href="https://survival-pi.com/#modpack">the modpack section</a> above. The Survival-Pi modpack already includes the voice chat mod including many more mods to boost your performance and experience.
+				</p>
+				Below are a couple of key bindings that will help you with using the mod. You can change the key bindings in your controls settings.
+				<ul>
+					<li><b>v</b>: Open voice chat settings to adjust your microphone or set it to push-to-talk or otherwise.</li>
+					<li><b>g</b>: Open the group window for creating and joining group calls. When using groups you can hear your friend anywhere.</li>
+					<li><b>m</b>: Mute your microphone (When push-to-talk is deactivated).</li>
+					<li><b>n</b>: Disable voice chat. You can hear nobody and nobody can hear you.</li>
+					<li><b>h</b>: Toggle between hiding and showing the icon on the bottom left.</li>
+				</ul>
+
+				<h2 id="get-money">How to get money:</h2>
+				You don't need your own shop to get money. You can exchange your diamonds for money. Read the tutorial below on how to do that.
+				<ol>
+					<li>Go to spawn (<code>/spawn</code>) and find the market booths with two chest shops inside it that sell diamonds.</li>
+					<li>Left-click the sign in front of the chest that says "Buying".</li>
+					<li>Type into the chat the amount you want to sell. Enter integers only. For example "1", "10" or "64". Type "all" to sell all diamonds in your inventory. Then press ENTER.</li>
+					<li>Use the command <code>/bal</code> to view your bank account balance. Use the command <code>/baltop</code> to view other player's bank accounts. For every diamond you get $50.</li>
+					<li>Use the other diamond shop that says "Selling" to exchange money back to diamonds. For every $50 you get one diamond. You use that shop the same way as described above.</li>
+					<li><a href="https://www.spigotmc.org/resources/quickshop-reremake-1-18-ready-multi-currency.62575/">Click for more details</a></li>
+				</ol>
+
+				<h2 id="sell-and-buy-at-shops">How to sell and buy at shops:</h2>
+				Note that you don't need your own shop to purchase or sell at player shops. Note that you can only buy or sell at shops that are not owned by you. Follow the tutorial below to buy items at a shop.
+				<ol>
+					<li>Make sure you have enough money. Follow the instructions described above under <a href="#get-money">"How to get money"</a></li>
+					<li>Go to spawn (<code>/spawn</code>) and find a shop with items you need.</li>
+					<li>The chests with the signs that say "Selling" in front of it are the shops that sell items to you. The signs show the item and the price for <code>one</code>.</li>
+					<li>Left-click the sign in front of that chest.</li>
+					<li>Type into the chat the amount you want to buy. Enter integers only. For example "1", "10" or "64". Type "all" to buy the whole stock. Then press ENTER.</li>
+					<li>Selling items at shops that say "Buying" on the sign is analog to the procedure described above.</li>
+					<li><a href="https://www.spigotmc.org/resources/quickshop-reremake-1-18-ready-multi-currency.62575/">Click for more details</a></li>
+				</ol>	
+
+				<h2 id="create-your-own-shop">How to create your own shop:</h2>
+				You can buy up to two plots to build your chest shops on. Each plot costs $100 which equals two diamonds. Read the tutorial below on how to buy the plots and create shops on those plots. Note that you don't need your own shop to get money and buy at other player shops.
+				<ol>
+					<li>Go to <code>/spawn</code> and find an empty plot that you want to build on.</li>
+					<li>Left-click the sign next to the plot to buy the shop. Make sure you have enough money to buy it. How to get money? Check the tutorial "How to get money" above.</li>
+					<li>You can now design and build your shop on that plot. Make it nice and beautiful! Ugly shops will be resetted if you're not online for a long time! Beautiful shops will stay, even if you're inactive.</li>
+					<li>
+						<b>How to create the chests for selling and buying items:</b>
+						<ol>
+							<li>Place a chest.</li>
+							<li>Hold the item you want to sell/buy in your hand.</li>
+							<li>Left-click on the chest</li>
+							<li>Enter the price you want to sell/buy <u>one</u> item for into the chat. Then press ENTER.</li>
+							<li>Players can now buy at your shop. Fill the chest to stock your shop.</li>
+							<li>Want to change the shop from buying to selling or vice verca? Or want to change the price? Rightclick the sign in front of your shop. This will open a configuration menu in your chat. Click the highlighted text to change the desired configuration. Append the new price to the chat. Then press ENTER.</li> 
+						</ol>
+					</li>
+					<li>You can share a shop plot with your friend: <code>/arm addmember [REGION] [PLAYER]</code>. Replace "[REGION]" by your plot's name (e.g. "shop1"). Replace "[PLAYER]" by your friend's name. You can remove a member with <code>/arm removemember [REGION] [PLAYER]</code>. You can add staff to your chest shops by facing the sign and executing <code>/qs staff add [PLAYER]</code>. You can remove the staff with <code>/qs staff del [PLAYER]</code>.</li>
+					<li><a href="https://www.spigotmc.org/resources/quickshop-reremake-1-18-ready-multi-currency.62575/">Click here for more details</a></li>
+				</ol>
+			
+				<h2 id="protect-your-chests">How to protect and unprotect your chests:</h2>
+				Your chest are protected by default automatically, so only you can open and break them. The command <code>/pyc</code> refers to the name of the plugin that this server uses: "Protect Your Chest". Read the tutorial below on how to use it.
+				<ul>
+					<li>Face your chest and use the following command in your chat: <code>/pyc unprotect</code>. This will unprotect your chest. Use <code>/pyc protect</code> to protect it.</li>
+					<li>Use <code>/pyc addFriend [yourFriendsName]</code> to add your friend to the chest you're facing. Your friend will be able to open this chest. Replace "[yourFriendsName]" by your friends name in Minecraft. Use <code>/pyc removeFriend [yourFriendsName]</code> to remove a friend.</li>
+					<li>Use <code>/pyc list addFriends [yourFriendsName]</code> to add a friend to your default friend list. All chests that you place from now on will have your friend on the list and he or she will be able to open it. Note the "s" at the end of "addFriends"!</li>
+					<li>Use <code>/pyc addFriendAll [yourFriendsName]</code> to add your friend to all <u>existing</u> chests to he or she can access them.</li>
+					<li>Hoppers can't access protected chests! Unprotect it first with <code>/pyc unprotect</code>.</li>
+					<li><a href="https://www.spigotmc.org/resources/protect-your-chest.88028/">Click for more details</a></li>
+				</ul>		
+			</div>
+		</div>
+
+
+
+		<div class="wrapper">
+			<div class="inner-wrapper">
+				<h2 id="useful-commands">Additional (free) features:</h2>
+				<ul>
+					<li><b>Spectator mode:</b> Use <code>/s</code> to enter the spectator mode. You cannot fly through blocks and below a certain depth. Use <code>/s</code> again to toggle it back off.</li>
+					<li><b>Home:</b> Use <code>/sethome</code> to set a home to return to. You can only set one home. Use <code>/home</code> to get to your home. <code>/home</code> costs you $42 of the in-game currency.</li>
+					<li><b>Warping:</b> <code>/warp</code> shows all available warps. <code>warp creative</code> warps you to a Creative world with a seperate inventory where you can test your redstone or design your building ideas.</li>
+					<li><b>Sit:</b> You can sit on on various slabs and stairs by double right-clicking them or by executing <code>/sit</code></li>
+					<li><b>Mount players:</b> Mount players by right clicking them. If you get tired of having a friend on top of your head you can execute <code>/mounts eject</code> and it will launch them forward, away from your head!</li>
+					<li><b>View statistics:</b> View your stats and those of everyone else on the server with <code>/statistic</code></li>
+					<li><b>Invisible item frames:</b> Sneak and right-click an item frame to make it invisible.</li>
+					<li><b>Ping players in chat:</b> Use <code>@PLAYER</code> to ping another player.</li>
+					<li><b>Chat placeholders:</b> Share your inventory, item, etc. in the chat. Try <code>[inv]</code> or <code>[website]</code> in chat. Click on it after sending in chat to reveal what's inside. <code>/interactivechat list</code> for a list of all placeholders you can use.</li>
+					<li><b>Custom discs:</b> Check out the custom discs with custom music! You can buy them at spawn or find them through treasure hunts. Clues for the treasure hunts are also at spawn.</li>
+					<li><b>Custom heads:</b> There are 6 custom heads at spawn that you can buy as collectable. You can also get your own head for free (once a month) on the <a href="https://survival-pi.tebex.io" target="_blank">shop</a>. On the shop you can also get other decorational heads for a small donation.</li>
+					<li><b>Grief detection:</b> Use <code>/co i</code> to toggle on the CoreProtect inspect mode. Use <code>/co i</code> again to toggle it off. When you're in the inspect mode you can check who placed or removed a block by holding a block and then right- and left-click. You can also check who interacted with chests or other interactable things the same way.</li>
+				</ul>
+				<h2>Additional (premium) features:</h2>
+				You get premium features if you buy a rank for a small donation on our <a href="https://survival-pi.tebex.io" target="_blank">shop</a>. Nothing is pay-to-win and all donations go directly to running the server.
+				<ul>
+					<li><b>Chest sorting:</b> Sort your inventory and chests with SHIFT-Rightclick on an empty slot. You can configure your hotkeys with <code>/chestsort hotkeys</code>.</li>
+					<li><b>Double doors:</b> Double doors will open both for you if you open one. This also applies to iron doors powered with redstone.</li>
+					<li><b>Kock on doors:</b> Knock on doors by rightclicking the door.</li>
+					<li><b>Set more homes:</b> Set up to 5 homes. Teleporting to you home will still cost you $42.</li>
+					<li><b>Custom colored chat prefixes:</b> Get a colored prefix with your own customizable text. <br />Example: <code><span style="color:purple">[YourPrefix]</span> <span style="color:rgb(0,106,128)">YourUsername ></span> message</code>.</li>
+					<li><b>Color your chat:</b> Use color codes in your messages. You can use colors from &0 to &9 and &a to &f. You can do styling with &k, &l, &m, &n and &o. Reset the styling and color with &r. <br />Example: <code style="color:red; font-weight:bold">&4&lbold and red text</code>.</li>
+					<li><b>Nicknames:</b> Use "/nick YourNickName" to set a nickname for yourself. The nickname will show in chat instead of your real username. You can use all color codes and miscellaneous codes to style your nickname to your preference :)</li>
+					<li><b>Emojis:</b> Use "/emoji" to display a list of all emojis. You can use emojis in chats, books and on signs. Use <code>/emoji</code> to display a list of all emojis. You can use emojis in chats, books and on signs.</li>
+					<li><b>Crawl:</b> In addition to sitting also laying and crawling with <code>/lay</code> and <code>/crawl</code>.</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
